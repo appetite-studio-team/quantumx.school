@@ -1,101 +1,463 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import RevealSection, { RevealLine } from "@/components/RevealSection";
+import WaitlistForm from "@/components/WaitlistForm";
+import ImageBreak, { ImageBackground } from "@/components/ImageBreak";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      {/* Hidden form for Netlify build parser — must match JS form fields */}
+      <form
+        name="waitlist"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        hidden
+      >
+        <input type="email" name="email" />
+      </form>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <Navbar />
+      <Hero />
+
+      {/* ——— IMAGE: Abstract quantum visualization ——— */}
+      <ImageBreak
+        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80"
+        alt="Abstract data visualization representing quantum networks"
+        priority
+      />
+
+      {/* ——— WHAT IS QUANTUMX SCHOOL ——— */}
+      <section
+        id="what-is"
+        className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48"
+      >
+        <div className="max-w-[1400px] mx-auto">
+          <RevealSection>
+            <h2 className="font-heading text-fg text-[clamp(2.5rem,7vw,6rem)] leading-[0.95] tracking-tight uppercase">
+              This Is Not
+              <br />
+              A School
+            </h2>
+          </RevealSection>
+
+          <RevealSection delay={0.15}>
+            <div className="mt-12 md:mt-20 max-w-2xl md:ml-auto">
+              <p className="text-muted text-base md:text-lg leading-relaxed">
+                QuantumX School exists for one reason.
+                <br />
+                To train people to actually build quantum systems.
+              </p>
+              <p className="text-muted text-base md:text-lg leading-relaxed mt-6">
+                Not watch lectures.
+                <br />
+                Not collect certificates.
+              </p>
+              <p className="text-fg text-base md:text-lg leading-relaxed mt-6">
+                You learn by touching real problems.
+                <br />
+                By breaking things.
+                <br />
+                By fixing them.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-dim text-sm md:text-base tracking-wide">
+                <span>Physics.</span>
+                <span>Code.</span>
+                <span>Electronics.</span>
+                <span>Research.</span>
+              </div>
+              <p className="text-fg text-sm md:text-base mt-6 tracking-wide">
+                All mixed. All applied.
+              </p>
+            </div>
+          </RevealSection>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <RevealLine className="absolute bottom-0 left-0 right-0" />
+      </section>
+
+      {/* ——— REDEFINING QUANTUM EDUCATION ——— */}
+      <section className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+        <div className="max-w-[1400px] mx-auto">
+          <RevealSection>
+            <h2 className="font-heading text-fg text-[clamp(2rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
+              We Don&apos;t Teach Quantum
+            </h2>
+            <h2 className="font-heading text-muted text-[clamp(2rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase mt-1">
+              We Build It
+            </h2>
+          </RevealSection>
+
+          <RevealSection delay={0.15}>
+            <div className="mt-12 md:mt-20 max-w-xl">
+              <p className="text-muted text-base md:text-lg leading-relaxed">
+                Traditional education moves slow.
+                <br />
+                Quantum doesn&apos;t.
+              </p>
+              <p className="text-fg text-base md:text-lg leading-relaxed mt-6">
+                So we flipped the model.
+              </p>
+              <p className="text-muted text-base md:text-lg leading-relaxed mt-6">
+                No rigid syllabus.
+                <br />
+                No fixed path.
+              </p>
+              <p className="text-muted text-base md:text-lg leading-relaxed mt-6">
+                You work on real problems.
+                <br />
+                Guided by people already doing the work.
+              </p>
+              <p className="text-fg text-base md:text-lg leading-relaxed mt-6">
+                Progress is measured by output.
+                <br />
+                Not grades.
+              </p>
+            </div>
+          </RevealSection>
+        </div>
+        <RevealLine className="absolute bottom-0 left-0 right-0" />
+      </section>
+
+      {/* ——— CORE MODEL ——— */}
+      <section className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+        <div className="max-w-[1400px] mx-auto">
+          <RevealSection>
+            <h2 className="font-heading text-fg text-[clamp(2.5rem,7vw,6rem)] leading-[0.95] tracking-tight uppercase text-center">
+              Research. Build. Iterate.
+            </h2>
+          </RevealSection>
+
+          <div className="mt-20 md:mt-32 grid md:grid-cols-3 gap-16 md:gap-8 lg:gap-16">
+            {/* Research */}
+            <RevealSection delay={0.1}>
+              <div className="space-y-6">
+                <h3 className="font-heading text-fg text-xl md:text-2xl tracking-tight uppercase">
+                  Research
+                </h3>
+                <div className="h-px bg-subtle" />
+                <p className="text-muted text-base leading-relaxed">
+                  You start with a real question.
+                </p>
+                <p className="text-muted text-base leading-relaxed">
+                  Post quantum security.
+                  <br />
+                  Quantum circuits.
+                  <br />
+                  Simulation problems.
+                </p>
+                <p className="text-fg text-base leading-relaxed">
+                  Theory shows up only when needed.
+                  <br />
+                  Not before.
+                </p>
+              </div>
+            </RevealSection>
+
+            {/* Build */}
+            <RevealSection delay={0.25}>
+              <div className="space-y-6">
+                <h3 className="font-heading text-fg text-xl md:text-2xl tracking-tight uppercase">
+                  Build
+                </h3>
+                <div className="h-px bg-subtle" />
+                <p className="text-muted text-base leading-relaxed">
+                  Then you build.
+                </p>
+                <p className="text-muted text-base leading-relaxed">
+                  Qiskit. Cirq. QuTiP.
+                  <br />
+                  Python simulations.
+                </p>
+                <p className="text-fg text-base leading-relaxed">
+                  Real tools.
+                  <br />
+                  Real constraints.
+                  <br />
+                  Real feedback.
+                </p>
+              </div>
+            </RevealSection>
+
+            {/* Iterate */}
+            <RevealSection delay={0.4}>
+              <div className="space-y-6">
+                <h3 className="font-heading text-fg text-xl md:text-2xl tracking-tight uppercase">
+                  Iterate
+                </h3>
+                <div className="h-px bg-subtle" />
+                <p className="text-muted text-base leading-relaxed">
+                  Nothing ships on the first try.
+                </p>
+                <p className="text-muted text-base leading-relaxed">
+                  You refine. You rework. You rethink.
+                </p>
+                <p className="text-fg text-base leading-relaxed">
+                  Peers challenge your ideas.
+                  <br />
+                  Mentors push you further.
+                </p>
+                <p className="text-muted text-sm mt-4">
+                  That&apos;s how research actually works.
+                </p>
+              </div>
+            </RevealSection>
+          </div>
+        </div>
+        <RevealLine className="absolute bottom-0 left-0 right-0" />
+      </section>
+
+      {/* ——— IMAGE: Research and technology ——— */}
+      <ImageBreak
+        src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80"
+        alt="Close-up of circuit board representing quantum hardware"
+        aspect="aspect-[21/8]"
+      />
+
+      {/* ——— RESEARCH FIRST LEARNING ——— */}
+      <section className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+        <div className="max-w-[1400px] mx-auto">
+          <RevealSection>
+            <h2 className="font-heading text-fg text-[clamp(2rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
+              Research Is
+              <br />
+              The Curriculum
+            </h2>
+          </RevealSection>
+
+          <RevealSection delay={0.15}>
+            <div className="mt-12 md:mt-20 max-w-xl">
+              <p className="text-muted text-base md:text-lg leading-relaxed">
+                Everything aligns with what&apos;s happening now.
+              </p>
+              <ul className="mt-8 space-y-3 text-fg text-base md:text-lg">
+                <li>Quantum computing.</li>
+                <li>Cryptography.</li>
+                <li>Post quantum security.</li>
+                <li>Networking.</li>
+                <li>Machine learning.</li>
+              </ul>
+              <p className="text-muted text-base md:text-lg leading-relaxed mt-8">
+                If it&apos;s outdated, it&apos;s ignored.
+                <br />
+                If it&apos;s cutting edge, it&apos;s explored.
+              </p>
+            </div>
+          </RevealSection>
+        </div>
+        <RevealLine className="absolute bottom-0 left-0 right-0" />
+      </section>
+
+      {/* ——— INDUSTRY CONNECTION ——— */}
+      <section className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+        <div className="max-w-[1400px] mx-auto">
+          <RevealSection>
+            <h2 className="font-heading text-fg text-[clamp(2rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
+              Close To
+              <br />
+              The Frontier
+            </h2>
+          </RevealSection>
+
+          <RevealSection delay={0.15}>
+            <div className="mt-12 md:mt-20">
+              <p className="text-muted text-base md:text-lg leading-relaxed max-w-xl">
+                We collaborate with people building quantum tech for real.
+              </p>
+              <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
+                <p className="text-fg text-lg md:text-xl tracking-tight">
+                  IBM Quantum.
+                </p>
+                <p className="text-fg text-lg md:text-xl tracking-tight">
+                  Google Quantum AI.
+                </p>
+                <p className="text-fg text-lg md:text-xl tracking-tight">
+                  Independent research teams.
+                </p>
+                <p className="text-fg text-lg md:text-xl tracking-tight">
+                  Early stage quantum startups.
+                </p>
+              </div>
+              <p className="text-muted text-base md:text-lg leading-relaxed mt-12 max-w-xl">
+                You see how things move outside textbooks.
+              </p>
+            </div>
+          </RevealSection>
+        </div>
+        <RevealLine className="absolute bottom-0 left-0 right-0" />
+      </section>
+
+      {/* ——— FOCUS AREAS ——— */}
+      <section className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+        <div className="max-w-[1400px] mx-auto">
+          <RevealSection>
+            <h2 className="font-heading text-fg text-[clamp(2rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
+              What You Can
+              <br />
+              Go Deep On
+            </h2>
+          </RevealSection>
+
+          <RevealSection delay={0.15}>
+            <ul className="mt-12 md:mt-20 space-y-4 md:space-y-6 max-w-2xl">
+              {[
+                "Quantum computing foundations",
+                "Algorithms and simulation",
+                "Post quantum cryptography",
+                "Quantum machine learning",
+                "Quantum communication and QKD",
+                "Hardware and electronics",
+                "AI tools for quantum software",
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className="text-fg text-lg md:text-2xl tracking-tight flex items-start gap-4"
+                >
+                  <span className="text-subtle text-sm mt-1.5 font-body tabular-nums">
+                    0{i + 1}
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-fg text-base md:text-lg mt-12 tracking-wide">
+              Pick depth over breadth.
+            </p>
+          </RevealSection>
+        </div>
+        <RevealLine className="absolute bottom-0 left-0 right-0" />
+      </section>
+
+      {/* ——— IMAGE: Atmospheric frontier ——— */}
+      <ImageBreak
+        src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2000&q=80"
+        alt="Deep space nebula representing the frontier of quantum research"
+        aspect="aspect-[21/10]"
+        brightness="brightness-[0.45]"
+      />
+
+      {/* ——— WHY QUANTUMX SCHOOL ——— */}
+      <section className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+        <div className="max-w-[1400px] mx-auto">
+          <RevealSection>
+            <h2 className="font-heading text-fg text-[clamp(2.5rem,7vw,6rem)] leading-[0.95] tracking-tight uppercase">
+              Why This
+              <br />
+              Exists
+            </h2>
+          </RevealSection>
+
+          <RevealSection delay={0.15}>
+            <div className="mt-12 md:mt-20 max-w-xl">
+              <p className="text-fg text-lg md:text-xl leading-relaxed">
+                Because quantum deserves better education.
+              </p>
+              <p className="text-muted text-lg md:text-xl leading-relaxed mt-6">
+                Because the future needs builders.
+                <br />
+                Not spectators.
+              </p>
+              <p className="text-muted text-lg md:text-xl leading-relaxed mt-6">
+                Because research should be accessible.
+                <br />
+                And practical.
+                <br />
+                And real.
+              </p>
+            </div>
+          </RevealSection>
+        </div>
+        <RevealLine className="absolute bottom-0 left-0 right-0" />
+      </section>
+
+      {/* ——— HOW TO JOIN ——— */}
+      <section
+        id="join"
+        className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48"
+      >
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 md:gap-20 items-start">
+            <div>
+              <RevealSection>
+                <h2 className="font-heading text-fg text-[clamp(2.5rem,7vw,6rem)] leading-[0.95] tracking-tight uppercase">
+                  Ready To
+                  <br />
+                  Go Deep
+                </h2>
+              </RevealSection>
+              <RevealSection delay={0.15}>
+                <div className="mt-8 md:mt-12">
+                  <p className="text-muted text-base md:text-lg leading-relaxed">
+                    Cohorts are small.
+                    <br />
+                    Access is intentional.
+                  </p>
+                  <p className="text-fg text-base md:text-lg leading-relaxed mt-6">
+                    If you&apos;re serious,
+                    <br />
+                    join the waiting list.
+                  </p>
+                </div>
+              </RevealSection>
+            </div>
+
+            <RevealSection delay={0.3}>
+              <WaitlistForm />
+            </RevealSection>
+          </div>
+        </div>
+        <RevealLine className="absolute bottom-0 left-0 right-0" />
+      </section>
+
+      {/* ——— VISION ——— */}
+      <ImageBackground
+        src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=2000&q=80"
+        alt="Abstract light patterns evoking quantum phenomena"
+        className="px-6 md:px-12 lg:px-16 py-40 md:py-56"
+      >
+        <div className="max-w-[1400px] mx-auto text-center">
+          <RevealSection>
+            <p className="font-heading text-fg text-[clamp(1.5rem,4vw,3.5rem)] leading-[1.1] tracking-tight uppercase max-w-4xl mx-auto">
+              QuantumX School exists to grow people who can shape the quantum
+              era.
+            </p>
+          </RevealSection>
+        </div>
+      </ImageBackground>
+
+      {/* ——— FOOTER ——— */}
+      <footer className="px-6 md:px-12 lg:px-16 py-16 md:py-20 border-t border-subtle">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+            <div>
+              <p className="font-heading text-fg text-sm tracking-[0.3em] uppercase">
+                QuantumX School
+              </p>
+              <p className="text-muted text-xs tracking-wide mt-2">
+                Built by QuantumX
+              </p>
+            </div>
+            <div className="flex gap-8">
+              <a
+                href="#"
+                className="animated-underline text-muted text-xs tracking-[0.2em] uppercase hover:text-fg transition-colors duration-300"
+              >
+                Privacy
+              </a>
+              <a
+                href="#"
+                className="animated-underline text-muted text-xs tracking-[0.2em] uppercase hover:text-fg transition-colors duration-300"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+          <div className="mt-16 md:mt-20">
+            <p className="text-subtle text-xs tracking-widest">
+              Built for people who want to think deeper
+            </p>
+          </div>
+        </div>
       </footer>
-    </div>
+    </>
   );
 }
