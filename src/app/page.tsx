@@ -4,9 +4,62 @@ import RevealSection, { RevealLine } from "@/components/RevealSection";
 import WaitlistForm from "@/components/WaitlistForm";
 import ImageBreak, { ImageBackground } from "@/components/ImageBreak";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://quantumx.school/#organization",
+      name: "QuantumX School",
+      url: "https://quantumx.school",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://quantumx.school/image/App-Icon-Black.png",
+        width: 1024,
+        height: 1024,
+      },
+      description:
+        "Research-first quantum computing education. Learn quantum computing, cryptography, and hardware through hands-on projects.",
+      sameAs: [],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://quantumx.school/#website",
+      url: "https://quantumx.school",
+      name: "QuantumX School",
+      publisher: { "@id": "https://quantumx.school/#organization" },
+      description:
+        "No classrooms. No memorization. Just real quantum research, built by people who want to go deep.",
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://quantumx.school/#school",
+      name: "QuantumX School",
+      url: "https://quantumx.school",
+      description:
+        "Research-first quantum computing education focused on quantum algorithms, post-quantum cryptography, quantum machine learning, and quantum hardware.",
+      areaServed: "Worldwide",
+      teaches: [
+        "Quantum Computing",
+        "Quantum Algorithms",
+        "Post-Quantum Cryptography",
+        "Quantum Machine Learning",
+        "Quantum Communication",
+        "Quantum Hardware",
+      ],
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hidden form for Netlify build parser — must match JS form fields */}
       <form
         name="waitlist"
@@ -433,12 +486,20 @@ export default function Home() {
                 QuantumX School
               </p>
               <p className="text-muted text-xs tracking-wide mt-2">
-                Built by QuantumX
+                Built by{" "}
+                <a
+                  href="https://quantumx.foundation/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="animated-underline text-muted hover:text-fg transition-colors duration-300"
+                >
+                  QuantumX
+                </a>
               </p>
             </div>
             <div className="flex gap-8">
               <a
-                href="#"
+                href="/privacy"
                 className="animated-underline text-muted text-xs tracking-[0.2em] uppercase hover:text-fg transition-colors duration-300"
               >
                 Privacy

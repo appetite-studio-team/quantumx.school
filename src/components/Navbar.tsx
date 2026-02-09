@@ -22,7 +22,7 @@ export default function Navbar() {
           href="#"
           className="font-heading text-fg text-xs md:text-sm tracking-[0.3em] uppercase"
         >
-          QuantumX
+          QuantumX <span className="text-muted font-body font-normal">School</span>
         </a>
         <a
           href="#join"
