@@ -17,7 +17,13 @@ const config: Config = {
       },
       fontFamily: {
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],
-        body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        body: [
+          "var(--font-mono)",
+          "SF Mono",
+          "Fira Code",
+          "Consolas",
+          "monospace",
+        ],
       },
       spacing: {
         "18": "4.5rem",
