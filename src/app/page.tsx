@@ -73,8 +73,8 @@ export default function Home() {
       <ImageBreak
         src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80"
         alt="Abstract data visualization representing quantum networks"
-        priority
-      />
+          priority
+        />
 
       {/* ——— WHAT IS QUANTUMX SCHOOL ——— */}
       <section
@@ -485,8 +485,8 @@ export default function Home() {
               <div className="mt-12 flex flex-col sm:flex-row gap-6 sm:gap-12">
                 <a
                   href="https://x.com/_Quantum_X_"
-                  target="_blank"
-                  rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                   className="group flex items-center gap-3"
                 >
                   <svg
@@ -499,11 +499,11 @@ export default function Home() {
                   <span className="animated-underline text-fg text-base md:text-lg tracking-tight group-hover:text-muted transition-colors duration-300">
                     @_Quantum_X_
                   </span>
-                </a>
-                <a
+          </a>
+          <a
                   href="https://www.linkedin.com/company/quantumx-foundation/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                   className="group flex items-center gap-3"
                 >
                   <svg
@@ -534,11 +534,11 @@ export default function Home() {
               </p>
               <a
                 href="https://quantumx.foundation/"
-                target="_blank"
-                rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                 className="flex items-center gap-2.5 mt-3 group"
-              >
-                <Image
+        >
+          <Image
                   src="/image/App-Icon-Black.png"
                   alt="QuantumX logo"
                   width={24}
@@ -562,22 +562,22 @@ export default function Home() {
                 className="animated-underline text-muted text-xs tracking-[0.2em] uppercase hover:text-fg transition-colors duration-300"
               >
                 Contact
-              </a>
-              <a
+        </a>
+        <a
                 href="https://x.com/_Quantum_X_"
-                target="_blank"
-                rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                 className="text-muted hover:text-fg transition-colors duration-300"
                 aria-label="X (Twitter)"
               >
                 <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
-              </a>
-              <a
+        </a>
+        <a
                 href="https://www.linkedin.com/company/quantumx-foundation/"
-                target="_blank"
-                rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                 className="text-muted hover:text-fg transition-colors duration-300"
                 aria-label="LinkedIn"
               >
