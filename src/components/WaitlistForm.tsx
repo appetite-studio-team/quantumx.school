@@ -21,17 +21,24 @@ export default function WaitlistForm() {
       formData.append("form-name", "waitlist");
       formData.append("email", email);
 
-      const res = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formData.toString(),
-      });
+      const isNetlify = typeof window !== "undefined" &&
+        !window.location.hostname.includes("localhost") &&
+        !window.location.hostname.includes("127.0.0.1");
 
-      if (res.ok) {
-        setSubmitted(true);
-      } else {
-        setError("Something went wrong. Try again.");
+      if (isNetlify) {
+        const res = await fetch("/__forms.html", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: formData.toString(),
+        });
+
+        if (!res.ok) {
+          setError("Something went wrong. Try again.");
+          return;
+        }
       }
+
+      setSubmitted(true);
     } catch {
       setError("Something went wrong. Try again.");
     } finally {
