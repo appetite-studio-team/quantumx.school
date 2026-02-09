@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     title: "QuantumX School — The Quantum Future Starts Here",
     description: SITE_DESCRIPTION,
     images: ["/og/og-image.png"],
-    creator: "@quantumxschool",
+    creator: "@_Quantum_X_",
   },
 
   icons: {

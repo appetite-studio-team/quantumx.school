@@ -21,7 +21,11 @@ const jsonLd = {
       },
       description:
         "Research-first quantum computing education. Learn quantum computing, cryptography, and hardware through hands-on projects.",
-      sameAs: [],
+      sameAs: [
+        "https://x.com/_Quantum_X_",
+        "https://www.linkedin.com/company/quantumx-foundation/",
+        "https://quantumx.foundation/",
+      ],
     },
     {
       "@type": "WebSite",
@@ -468,6 +472,74 @@ export default function Home() {
         </div>
       </ImageBackground>
 
+      {/* ——— CONTACT ——— */}
+      <section
+        id="contact"
+        className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48"
+      >
+        <div className="max-w-[1400px] mx-auto">
+          <RevealSection>
+            <h2 className="font-heading text-fg text-[clamp(2rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
+              Get In Touch
+            </h2>
+          </RevealSection>
+
+          <RevealSection delay={0.15}>
+            <div className="mt-12 md:mt-20">
+              <p className="text-muted text-base md:text-lg leading-relaxed max-w-xl">
+                Have a question? Want to collaborate?
+                <br />
+                Just say hi.
+              </p>
+
+              {/* Email */}
+              <a
+                href="mailto:hi@quantumx.foundation"
+                className="inline-block mt-10 group"
+              >
+                <span className="text-[10px] tracking-[0.3em] uppercase text-muted block mb-2">
+                  Email
+                </span>
+                <span className="animated-underline text-fg text-lg md:text-2xl tracking-tight group-hover:text-muted transition-colors duration-300">
+                  hi@quantumx.foundation
+                </span>
+              </a>
+
+              {/* Social */}
+              <div className="mt-12 flex flex-col sm:flex-row gap-6 sm:gap-12">
+                <a
+                  href="https://x.com/_Quantum_X_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-muted block mb-2">
+                    X (Twitter)
+                  </span>
+                  <span className="animated-underline text-fg text-base md:text-lg tracking-tight group-hover:text-muted transition-colors duration-300">
+                    @_Quantum_X_
+                  </span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/quantumx-foundation/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-muted block mb-2">
+                    LinkedIn
+                  </span>
+                  <span className="animated-underline text-fg text-base md:text-lg tracking-tight group-hover:text-muted transition-colors duration-300">
+                    QuantumX Foundation
+                  </span>
+                </a>
+              </div>
+            </div>
+          </RevealSection>
+        </div>
+        <RevealLine className="absolute bottom-0 left-0 right-0" />
+      </section>
+
       {/* ——— FOOTER ——— */}
       <footer className="px-6 md:px-12 lg:px-16 py-16 md:py-20 border-t border-subtle">
         <div className="max-w-[1400px] mx-auto">
@@ -494,7 +566,7 @@ export default function Home() {
                 </span>
               </a>
             </div>
-            <div className="flex gap-8">
+            <div className="flex gap-6 sm:gap-8">
               <a
                 href="/privacy"
                 className="animated-underline text-muted text-xs tracking-[0.2em] uppercase hover:text-fg transition-colors duration-300"
@@ -502,10 +574,26 @@ export default function Home() {
                 Privacy
               </a>
               <a
-                href="#"
+                href="#contact"
                 className="animated-underline text-muted text-xs tracking-[0.2em] uppercase hover:text-fg transition-colors duration-300"
               >
                 Contact
+              </a>
+              <a
+                href="https://x.com/_Quantum_X_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="animated-underline text-muted text-xs tracking-[0.2em] uppercase hover:text-fg transition-colors duration-300"
+              >
+                X
+              </a>
+              <a
+                href="https://www.linkedin.com/company/quantumx-foundation/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="animated-underline text-muted text-xs tracking-[0.2em] uppercase hover:text-fg transition-colors duration-300"
+              >
+                LinkedIn
               </a>
             </div>
           </div>
