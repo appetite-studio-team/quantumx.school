@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import RevealSection, { RevealLine } from "@/components/RevealSection";
 import WaitlistForm from "@/components/WaitlistForm";
 import ImageBreak, { ImageBackground } from "@/components/ImageBreak";
+import FocusAreas from "@/components/FocusAreas";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -345,32 +346,7 @@ export default function Home() {
             </h2>
           </RevealSection>
 
-          <RevealSection delay={0.15}>
-            <ul className="mt-12 md:mt-20 space-y-4 md:space-y-6 max-w-2xl">
-              {[
-                "Quantum computing foundations",
-                "Algorithms and simulation",
-                "Post quantum cryptography",
-                "Quantum machine learning",
-                "Quantum communication and QKD",
-                "Hardware and electronics",
-                "AI tools for quantum software",
-              ].map((item, i) => (
-                <li
-                  key={i}
-                  className="text-fg text-lg md:text-2xl tracking-tight flex items-start gap-4"
-                >
-                  <span className="text-subtle text-sm mt-1.5 font-body tabular-nums">
-                    0{i + 1}
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-fg text-base md:text-lg mt-12 tracking-wide">
-              Pick depth over breadth.
-            </p>
-          </RevealSection>
+          <FocusAreas />
         </div>
         <RevealLine className="absolute bottom-0 left-0 right-0" />
       </section>
