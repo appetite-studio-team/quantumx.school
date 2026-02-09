@@ -1,13 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import HeroBackground from "./HeroBackground";
 
 const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-16 pt-20">
-      <div className="max-w-[1400px] mx-auto w-full">
+    <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-16 pt-20 overflow-hidden">
+      {/* Interactive particle background */}
+      <HeroBackground />
+
+      <div className="relative z-10 max-w-[1400px] mx-auto w-full">
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -72,7 +76,7 @@ export default function Hero() {
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 1.2, ease, delay: 1.2 }}
-        className="absolute bottom-0 left-0 right-0 h-px bg-subtle origin-left"
+        className="absolute bottom-0 left-0 right-0 h-px bg-subtle origin-left z-10"
       />
     </section>
   );
