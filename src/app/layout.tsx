@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -13,6 +13,14 @@ const SITE_URL = "https://quantumx.school";
 const SITE_NAME = "QuantumX School";
 const SITE_DESCRIPTION =
   "No classrooms. No memorization. Just real quantum research, built by people who want to go deep. Learn quantum computing, cryptography, and hardware through hands-on projects.";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#050505",
+  colorScheme: "dark",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

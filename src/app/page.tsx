@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import RevealSection, { RevealLine } from "@/components/RevealSection";
@@ -59,16 +60,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      {/* Hidden form for Netlify build parser — must match JS form fields */}
-      <form
-        name="waitlist"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        hidden
-      >
-        <input type="email" name="email" />
-      </form>
 
       <Navbar />
       <Hero />
@@ -485,17 +476,23 @@ export default function Home() {
               <p className="font-heading text-fg text-sm tracking-[0.3em] uppercase">
                 QuantumX School
               </p>
-              <p className="text-muted text-xs tracking-wide mt-2">
-                Built by{" "}
-                <a
-                  href="https://quantumx.foundation/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="animated-underline text-muted hover:text-fg transition-colors duration-300"
-                >
-                  QuantumX
-                </a>
-              </p>
+              <a
+                href="https://quantumx.foundation/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 mt-3 group"
+              >
+                <Image
+                  src="/image/App-Icon-Black.png"
+                  alt="QuantumX logo"
+                  width={24}
+                  height={24}
+                  className="rounded-md border border-subtle group-hover:border-muted transition-colors duration-300"
+                />
+                <span className="animated-underline text-muted text-xs tracking-wide group-hover:text-fg transition-colors duration-300">
+                  Built by QuantumX Foundation
+                </span>
+              </a>
             </div>
             <div className="flex gap-8">
               <a

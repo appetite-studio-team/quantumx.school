@@ -21,7 +21,7 @@ export default function WaitlistForm() {
       formData.append("form-name", "waitlist");
       formData.append("email", email);
 
-      const res = await fetch("/", {
+      const res = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData.toString(),
