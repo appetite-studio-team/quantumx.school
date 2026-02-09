@@ -20,9 +20,9 @@ export default function Navbar() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 flex items-center justify-between h-16 md:h-20">
         <a
           href="#"
-          className="font-heading text-fg text-xs md:text-sm tracking-[0.3em] uppercase"
+          className="font-body text-fg text-xs md:text-sm tracking-[0.3em] uppercase font-bold"
         >
-          QuantumX <span className="text-muted font-body font-normal">School</span>
+          QuantumX <span className="text-muted font-normal">School</span>
         </a>
         <a
           href="#join"
