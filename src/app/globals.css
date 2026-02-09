@@ -2,21 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ——————————————————————————————————————
-   Custom Font
-   Place your "Beta Manifa" font files in /public/fonts/
-   Supported formats: .woff2, .woff, .ttf, .otf
-   —————————————————————————————————————— */
-@font-face {
-  font-family: "Beta Manifa Advertising V1.20.4 Bd Wide";
-  src: url("/fonts/BetaManifa-BdWide.woff2") format("woff2"),
-    url("/fonts/BetaManifa-BdWide.woff") format("woff"),
-    url("/fonts/BetaManifa-BdWide.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* ——— Base ——— */
 :root {
   --background: #050505;

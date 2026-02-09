@@ -16,11 +16,7 @@ const config: Config = {
         dim: "#555555",
       },
       fontFamily: {
-        heading: [
-          '"Beta Manifa Advertising V1.20.4 Bd Wide"',
-          "system-ui",
-          "sans-serif",
-        ],
+        heading: ["var(--font-heading)", "system-ui", "sans-serif"],
         body: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       spacing: {
