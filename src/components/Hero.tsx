@@ -19,7 +19,10 @@ export default function Hero() {
           transition={{ duration: 1, ease, delay: 0.2 }}
         >
           <h1 className="font-heading text-fg text-[clamp(3rem,10vw,9rem)] leading-[0.9] tracking-tight uppercase">
-            The Quantum
+            The{" "}
+            <span className="inline-block bg-fg text-bg px-3 md:px-5 py-1">
+              Quantum
+            </span>
             <br />
             Future
           </h1>
