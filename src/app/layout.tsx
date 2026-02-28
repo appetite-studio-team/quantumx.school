@@ -1,7 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Bebas_Neue } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+
+const GA_ID = "G-KBK96GV4SC";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -130,6 +133,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${jetbrainsMono.variable} ${bebasNeue.variable}`}>
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
+      </head>
       <body className="font-body antialiased">
         <SmoothScroll>{children}</SmoothScroll>
       </body>
