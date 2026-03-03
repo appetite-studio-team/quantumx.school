@@ -152,7 +152,7 @@ export default function HeroBackground() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(250, 250, 250, ${p.opacity})`;
+        ctx.fillStyle = `rgba(10, 10, 10, ${p.opacity})`;
         ctx.fill();
       }
 
@@ -167,7 +167,7 @@ export default function HeroBackground() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(250, 250, 250, ${opacity})`;
+            ctx.strokeStyle = `rgba(10, 10, 10, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -194,7 +194,7 @@ export default function HeroBackground() {
 
         if (s.opacity > 0.005) {
           ctx.font = `${s.size}px "JetBrains Mono", "SF Mono", monospace`;
-          ctx.fillStyle = `rgba(250, 250, 250, ${s.opacity})`;
+          ctx.fillStyle = `rgba(10, 10, 10, ${s.opacity})`;
           ctx.fillText(s.text, s.x, s.y);
         }
       }
@@ -209,8 +209,8 @@ export default function HeroBackground() {
         h * 0.25,
         w * 0.4
       );
-      gradient.addColorStop(0, `rgba(250, 250, 250, ${pulseOpacity})`);
-      gradient.addColorStop(1, "rgba(250, 250, 250, 0)");
+      gradient.addColorStop(0, `rgba(10, 10, 10, ${pulseOpacity})`);
+      gradient.addColorStop(1, "rgba(10, 10, 10, 0)");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, w, h);
 

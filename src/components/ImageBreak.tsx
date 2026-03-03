@@ -22,10 +22,10 @@ export default function ImageBreak({
 }: ImageBreakProps) {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.2, ease }}
-      viewport={{ once: true, margin: "-40px" }}
+      initial={{ opacity: 0, scale: 1.03 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, ease }}
+      viewport={{ once: true, margin: "-60px" }}
       className={`relative w-full ${aspect} overflow-hidden`}
     >
       <Image
@@ -37,7 +37,7 @@ export default function ImageBreak({
         priority={priority}
         loading={priority ? "eager" : "lazy"}
       />
-      {/* Top and bottom gradient bleed into dark background */}
+      {/* Top and bottom gradient bleed into page background */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg via-transparent to-bg" />
       {/* Subtle side vignette */}
       <div className="absolute inset-0 bg-gradient-to-r from-bg/40 via-transparent to-bg/40" />

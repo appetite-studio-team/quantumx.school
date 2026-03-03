@@ -135,7 +135,7 @@ function FocusDialog({
       onClick={onClose}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
 
       {/* Dialog */}
       <motion.div
@@ -144,10 +144,10 @@ function FocusDialog({
         exit={{ opacity: 0, y: 20, scale: 0.97 }}
         transition={{ duration: 0.4, ease }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-[#0a0a0a] border border-subtle"
+        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-bg border border-subtle"
       >
         {/* Top bar */}
-        <div className="sticky top-0 z-10 flex items-center justify-between px-6 md:px-10 py-5 border-b border-subtle bg-[#0a0a0a]/95 backdrop-blur-sm">
+        <div className="sticky top-0 z-10 flex items-center justify-between px-6 md:px-10 py-5 border-b border-subtle bg-bg/95 backdrop-blur-sm">
           <div className="flex items-center gap-4">
             <span className="text-xs font-body tabular-nums tracking-wider text-muted">
               0{index + 1}
@@ -226,7 +226,7 @@ function FocusDialog({
             onClick={onClose}
             className="inline-flex items-center text-xs tracking-[0.2em] uppercase text-bg bg-fg px-6 py-3.5 hover:bg-muted transition-colors duration-300 mt-10"
           >
-            Join the waitlist
+            Join the cohort
             <span className="ml-2">&rarr;</span>
           </a>
         </div>
@@ -260,9 +260,9 @@ export default function FocusAreas() {
             onClick={() => setSelectedIndex(i)}
             className="group relative border-b border-subtle cursor-pointer"
           >
-            {/* Hover background glow */}
+            {/* Hover background */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-white/[0.03] via-white/[0.06] to-white/[0.03]"
+              className="absolute inset-0 bg-gradient-to-r from-black/[0.03] via-black/[0.06] to-black/[0.03]"
               initial={{ opacity: 0 }}
               animate={{ opacity: hoveredIndex === i ? 1 : 0 }}
               transition={{ duration: 0.4, ease }}
@@ -272,7 +272,7 @@ export default function FocusAreas() {
               {/* Number */}
               <span
                 className={`text-xs md:text-sm font-body tabular-nums tracking-wider transition-colors duration-500 w-8 ${
-                  hoveredIndex === i ? "text-fg" : "text-subtle"
+                  hoveredIndex === i ? "text-fg" : "text-muted"
                 }`}
               >
                 0{i + 1}
@@ -294,7 +294,7 @@ export default function FocusAreas() {
                 className={`hidden sm:inline-block text-[10px] md:text-xs tracking-[0.3em] uppercase px-3 md:px-4 py-1.5 border transition-all duration-500 ${
                   hoveredIndex === i
                     ? "border-fg/30 text-fg"
-                    : "border-subtle text-subtle"
+                    : "border-muted text-muted"
                 }`}
               >
                 {area.tag}
@@ -305,7 +305,7 @@ export default function FocusAreas() {
                 className="w-5 h-5 md:w-6 md:h-6 flex items-center justify-center"
                 animate={{
                   x: hoveredIndex === i ? 4 : 0,
-                  opacity: hoveredIndex === i ? 1 : 0.2,
+                  opacity: hoveredIndex === i ? 1 : 0.6,
                 }}
                 transition={{ duration: 0.3, ease }}
               >
@@ -315,7 +315,7 @@ export default function FocusAreas() {
                   stroke="currentColor"
                   strokeWidth={1.5}
                   className={`w-4 h-4 md:w-5 md:h-5 transition-colors duration-500 ${
-                    hoveredIndex === i ? "text-fg" : "text-subtle"
+                    hoveredIndex === i ? "text-fg" : "text-muted"
                   }`}
                 >
                   <path

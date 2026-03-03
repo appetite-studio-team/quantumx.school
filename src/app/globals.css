@@ -4,8 +4,8 @@
 
 /* ——— Base ——— */
 :root {
-  --background: #050505;
-  --foreground: #fafafa;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
 }
 
 * {
@@ -60,8 +60,8 @@ html.lenis body {
 
 /* ——— Selection ——— */
 ::selection {
-  background: #fafafa;
-  color: #050505;
+  background: #0a0a0a;
+  color: #fafafa;
 }
 
 /* ——— Hide scrollbar ——— */

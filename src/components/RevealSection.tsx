@@ -9,19 +9,61 @@ interface RevealSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
+  stagger?: boolean;
 }
 
 export default function RevealSection({
   children,
   className = "",
   delay = 0,
+  stagger = false,
 }: RevealSectionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, ease, delay }}
-      viewport={{ once: true, margin: "-80px" }}
+      initial={{ opacity: 0, y: 36, scale: stagger ? 0.98 : 1 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.7, ease, delay }}
+      viewport={{ once: true, margin: "-60px" }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function StaggerChildren({
+  children,
+  className = "",
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-40px" }}
+      variants={{
+        visible: { transition: { staggerChildren: 0.08, delayChildren: delay } },
+        hidden: {},
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function StaggerItem({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return (
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.5, ease }}
       className={className}
     >
       {children}

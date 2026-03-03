@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#050505",
-        fg: "#fafafa",
-        muted: "#777777",
-        subtle: "#2a2a2a",
-        dim: "#555555",
+        bg: "#fafafa",
+        fg: "#0a0a0a",
+        muted: "#525252",
+        subtle: "#e5e5e5",
+        dim: "#737373",
       },
       fontFamily: {
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],
