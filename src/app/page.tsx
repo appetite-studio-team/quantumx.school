@@ -98,14 +98,14 @@ export default function Home() {
               {whatWeDo.map((item, i) => (
                 <StaggerItem key={i}>
                   <div className="flex items-start gap-4 md:gap-6 py-4 md:py-5 px-4 md:px-5">
-                    <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 flex items-center justify-center font-body text-xs md:text-sm tabular-nums text-fg bg-subtle/50 border border-subtle">
+                    <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 flex items-center justify-center font-body text-xs md:text-sm tabular-nums text-fg bg-subtle border border-subtle">
                       0{i + 1}
                     </span>
                     <div className="min-w-0 pt-0.5">
                       <p className="font-heading text-fg text-sm md:text-base tracking-tight uppercase">
                         {item.title}
                       </p>
-                      <p className="text-muted text-xs md:text-sm mt-1 leading-relaxed">
+                      <p className="text-fg/85 text-sm md:text-base mt-1.5 leading-relaxed font-body">
                         {item.desc}
                       </p>
                     </div>
