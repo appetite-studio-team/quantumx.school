@@ -102,7 +102,7 @@ export default function Home() {
                       0{i + 1}
                     </span>
                     <div className="min-w-0 pt-0.5">
-                      <p className="font-heading text-fg text-sm md:text-base tracking-tight uppercase">
+                      <p className="font-heading text-fg text-base md:text-lg tracking-tight uppercase">
                         {item.title}
                       </p>
                       <p className="text-fg/85 text-sm md:text-base mt-1.5 leading-relaxed font-body">
