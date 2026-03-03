@@ -92,8 +92,8 @@ export default function WaitlistForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 bg-bg/80 border border-subtle text-fg text-base py-3 px-4 focus:border-fg focus:outline-none transition-colors duration-300 placeholder:text-subtle"
-          placeholder="you@email.com"
+          className="flex-1 bg-bg/80 border border-subtle text-fg text-base py-3 px-4 focus:border-fg focus:outline-none transition-colors duration-300 placeholder:text-muted"
+          placeholder="gavin@hooli.com"
           disabled={loading}
         />
         <motion.button
