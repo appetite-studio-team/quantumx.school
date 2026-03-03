@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export default function BackgroundPattern({ className = "" }: { className?: string }) {
   return (
     <div
